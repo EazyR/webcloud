@@ -2,7 +2,7 @@
 
 # Remplacer xxx.xxx.xxx.xxx par l'adresse IP de votre serveur.
 
-tail -n +3 "$0" | ssh root@178.32.62.56; exit
+tail -n +3 "$0" | ssh root@178.62.32.56; exit
 set -eu
 
 # Update le serveur
