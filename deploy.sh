@@ -36,7 +36,7 @@ cd /var/www/html/
 
 # clone our git project in the html repertory
 
-git clone git@github.com:eazyR/webcloud.git
+git clone https://github.com/EazyR/webcloud.git
 
 cd /var/www/html/webcloud
 
