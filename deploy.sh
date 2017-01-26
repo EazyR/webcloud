@@ -56,16 +56,32 @@ crontab cron.txt
 ########### Wikipedia on server ###########
 
 # DL Kiwix for x86_64 architectures : Si c'est déjà DL, pass
+if [-e kiwix-linux-x86_64.tar] 
+then
+  echo "kiwix déjà téléchargé"
+else
 wget http://download.kiwix.org/bin/kiwix-linux-x86_64.tar.bz2
+
 
 #Unzip the .bz2 file and extract the content of the .tar archive
 bunzip2 kiwix-linux-x86_64.tar.bz2
 tar xvf kiwix-linux-x86_64.tar
+fi
 
 #DL the .zim file : Si c'est déjà DL, pass
+if [-e wikipedia_fr_medicine_nopic_2016-10.zim]
+then 
+  echo "zim déjà téléchargé"
+  else
 wget https://download.kiwix.org/zim/wikipedia/wikipedia_fr_medicine_nopic_2016-10.zim
+fi
 
 # Use the kiwix serve command to serve the .zim file on port 80 : Rajouter un if / else. Si le processus est déjà lancé, le tuer puis le relancer.
+if [ps -aux | grep kiwix-serve > a]
+then
+ echo "kiwix déjà lancé"
+else
 ./kiwix/bin/kiwix-serve --port=80 wikipedia_fr_medicine_nopic_2016-10.zim
+fi
 
 
