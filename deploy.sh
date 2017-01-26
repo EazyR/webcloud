@@ -77,8 +77,8 @@ wget https://download.kiwix.org/zim/wikipedia/wikipedia_fr_medicine_nopic_2016-1
 fi
 
 # Use the kiwix serve command to serve the .zim file on port 80 : Rajouter un if / else. Si le processus est déjà lancé, le tuer puis le relancer.
-ps axo comm | grep kiwix-serve > a
-if [ $a !=null ]
+ps cax | grep kiwi-server > /dev/null 
+if [ $? -eq 0 ]; 
 then
  echo "kiwix déjà lancé"
 else
