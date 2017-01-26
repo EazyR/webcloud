@@ -11,11 +11,11 @@
 
 # Met à jour le serveur
 echo "xxx apt-get update xxx"
-apt-get update > ~/latest-update.log
+apt-get update -y > ~/latest-update.log
 
-# Installe les mises à jour
+# Installe les mises à jour en évitant des erreurs qui demanderaient de lancer le script une 2nde fois.
 echo "xxx apt-get upgrade xxx"
-apt-get upgrade > ~/latest-upgrade.log
+DEBIAN_FRONTEND=noninteractive apt-get -y upgrade > ~/latest-upgrade.log
 
 # Installe NGINX
 apt-get install -y nginx
@@ -30,22 +30,22 @@ rm -f var/www/html*
 # On se place dans notre dossier www
 cd /var/www
 
-# On y clone notre repo git et on se place dedans
+# On y clone notre repo git et on se place dedans, s'il n'y existe pas déjà. Sinon, on le met à jour.
 
 if [ -d html/.git ]; then
     # On le met à jour
-    echo " ### Un projet semble initialisé"
-    echo " ### Mise à jour du projet ... "
+    echo " ### Il y a déjà un projet"
+    echo " ### Mise à jour du projet en cours..."
     cd html
     git pull
 else
-    echo " ## Le projet n'a jamais été déployé pour le moment"
-    echo " ## Mise en place du projet ... "
+    echo " ### Pas de projet en cours"
+    echo " ### Installation du repo git"
 
     # On supprime le dossier html
     rm -Rf html
     # Et on clone le projet dans un nouveau dossier html
-    git clone https://github.com/CelesteBegassat/WebCloud.git html
+    git clone https://github.com/EazyR/webcloud.git html
 fi
 
 ######## Mise à jour de la crontab #########
