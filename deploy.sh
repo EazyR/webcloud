@@ -63,7 +63,7 @@ bunzip2 kiwix-linux-x86_64.tar.bz2
 tar xvf kiwix-linux-x86_64.tar
 
 #DL the .zim file : Si c'est déjà DL, pass
-wget https://download.kiwix.org/zim/wikipedia/wikipedia_fr_all_nopic_2016_12.zim
+wget https://download.kiwix.org/zim/wikipedia/wikipedia_fr_all_nopic_2016-12.zim
 
 # Use the kiwix serve command to serve the .zim file on port 80 : Rajouter un if / else. Si le processus est déjà lancé, le tuer puis le relancer.
 ./kiwix/bin/kiwix-serve --port=80 wikipedia_fr_all_nopic_2016_12.zim
