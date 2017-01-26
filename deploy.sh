@@ -15,10 +15,6 @@ apt-get install -y ssh
 # Install NGINX
 apt-get install -y nginx
 
-# Install apache2
-
-apt-get install apache2
-
 # apt-get install -y ruby
 
 # gem install jekyll
@@ -83,6 +79,7 @@ then
  echo "kiwix déjà lancé"
 else
 ./kiwix/bin/kiwix-serve --port=81 wikipedia_fr_medicine_nopic_2016-10.zim
+ echo "kiwix vient d'être lancé"
 fi
 
 
