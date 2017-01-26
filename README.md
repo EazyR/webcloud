@@ -5,5 +5,7 @@ ISEP
 A2 Systèmes d'Informations
 Richard DISARO & Guillaume PAPINUTTI.
 
-ReadME à implémenter d'ici jeudi.
+- Créer un droplet Ubuntu sur digitalocean
+- Se connecter en ssh et lancer deploy.sh
+- Kiwix est installé et accessible sur le port 1025
 
