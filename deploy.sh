@@ -43,7 +43,7 @@ cd /var/www/html/webcloud
 
 # Send the list of processes to /var/www/index.html
 
-ps > /var/www/html/index.html
+#ps > /var/www/html/index.html
 
 ######## Définir des rappels avec crontab #########
 
