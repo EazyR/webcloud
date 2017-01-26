@@ -78,7 +78,7 @@ fi
 
 # Use the kiwix serve command to serve the .zim file on port 80 : Rajouter un if / else. Si le processus est déjà lancé, le tuer puis le relancer.
 ps -aux | grep kiwix-serve > a
-if [$a !=null]
+if [ $a !=null ]
 then
  echo "kiwix déjà lancé"
 else
