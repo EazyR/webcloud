@@ -82,7 +82,7 @@ if [ $a !=null ]
 then
  echo "kiwix déjà lancé"
 else
-./kiwix/bin/kiwix-serve --port=80 wikipedia_fr_medicine_nopic_2016-10.zim
+./kiwix/bin/kiwix-serve --port=81 wikipedia_fr_medicine_nopic_2016-10.zim
 fi
 
 
