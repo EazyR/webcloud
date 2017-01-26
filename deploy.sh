@@ -50,7 +50,7 @@ fi
 
 ######## Mise à jour de la crontab #########
 
-crontab cron.txt
+crontab html/cron.txt
 
 # Le cron.txt indique à la crontab d'afficher à toutes les heures +5min la date, la liste des processus en cours & l'espace libre.
 
