@@ -3,11 +3,11 @@
 ########### INCOMPLET #############
 
 
-# Update le serveur
-apt-get update
+# Met à jour le serveur
+apt-get update > ~/latest-update.log
 
-# Upgrade le serveur
-apt-get upgrade
+# Installe les mises à jour
+apt-get upgrade > ~/latest-upgrade.log
 
 #Install SSH
 apt-get install -y ssh
@@ -35,11 +35,6 @@ cd /var/www/html/
 git clone https://github.com/EazyR/webcloud.git
 
 cd /var/www/html/webcloud
-
-
-# Send the list of processes to /var/www/index.html
-
-#ps > /var/www/html/index.html
 
 ######## Définir des rappels avec crontab #########
 
@@ -81,5 +76,3 @@ else
 ./kiwix/bin/kiwix-serve --port=81 wikipedia_fr_medicine_nopic_2016-10.zim
  echo "kiwix vient d'être lancé"
 fi
-
-
