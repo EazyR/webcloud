@@ -47,7 +47,7 @@ ps > /var/www/html/index.html
 
 ######## Définir des rappels avec crontab #########
 
-crontab -e
+crontab cron.txt
 
 ######" Déployer un blog avec Jekyll #######
 
